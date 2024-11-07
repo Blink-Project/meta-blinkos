@@ -1,4 +1,4 @@
-SUMMARY = "Orange Pi Image with Docker and K3S support, No Graphics"
+SUMMARY = "Orange Pi Image with Docker support, No Graphics"
 
 require base-dev-image.inc
 
@@ -9,4 +9,4 @@ IMAGE_INSTALL += " \
     docker-compose \
 "
 
-export IMAGE_BASENAME = "orangepi-docker-image"
+export IMAGE_BASENAME = "blinkos-base-image"
