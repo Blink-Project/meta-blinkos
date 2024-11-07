@@ -1,10 +1,10 @@
 [Unit]
-Description=Start WLAN0 supplicant
+Description=Start WPA supplicant
 After=systemd-networkd.service
 
 [Service]
 Type=simple
-ExecStart=/usr/sbin/wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
+ExecStart=/usr/share/wlan/start-wpa-supplicant.sh
 
 [Install]
 WantedBy=network.target
