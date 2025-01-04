@@ -3,6 +3,11 @@ IMAGE_LINGUAS = "en-us"
 
 inherit image fs-overlay
 
+inherit extrausers
+# Generated using 'printf "%q" $(mkpasswd -m sha256crypt blink)'
+EXTRA_USER_PASSWD = "\$5\$wRt8QwSZwLnyNTQG\$qYuJJewb7KaXoIXEE7BmbX5f2taIm1NiekQANM3Q1XD"
+EXTRA_USERS_PARAMS = "useradd -p '${EXTRA_USER_PASSWD}' blink"
+
 CORE_OS = " \
     alsa-lib \
     coreutils \
@@ -44,6 +49,7 @@ EXTRA_TOOLS = " \
     ethtool \
     fbset \
     findutils \
+    gdb \
     gdbserver \
     grep \
     htop \
@@ -54,6 +60,7 @@ EXTRA_TOOLS = " \
     less \
     nmap \
     procps \
+    sudo \
     sysfsutils \
     tcpdump \
     unzip \
